@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: borderbox;
+}
+
+.card-body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-container,
+.flip-card {
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  perspective: 1000px;
+}
+
+.flip-card-container:hover,
+.flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-cart-front,
+.flip-cart-back {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.flip-cart-front {
+  background-color: #333;
+  color: #fff;
+}
+
+.flip-cart-back {
+  background-color: #517fa4;
+  color: #fff;
+  transform: rotateY(180deg);
+}
