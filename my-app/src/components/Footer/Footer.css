@@ -1,8 +1,18 @@
-.Footer__styling {
+.footer__container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(17, 17, 17);
   border: 2px black solid;
   width: 500px;
   margin: 0 auto;
+}
+
+.footer__button {
+  width: 120px;
+  height: 80px;
+  border: 0;
+  background-color: none;
+  background-image: url(../image/portal.gif);
+  background-size: 100%;
 }
