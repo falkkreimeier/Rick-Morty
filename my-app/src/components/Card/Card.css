@@ -61,8 +61,8 @@
 }
 
 .card__container {
-  background-image: url("../image/rick-and-morty-wallpaper-wallpaper-background-027-920x518.jpg");
-  width: 500px;
+  background-color: azure;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,6 +74,7 @@
 }
 
 .card__image {
+  grid-area: image;
   height: 8rem;
   border: 2px gold solid;
   border-radius: 50%;
@@ -81,5 +82,20 @@
   box-shadow: 0 0 5px 5px;
 }
 
-.card__image--portal {
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style: none;
+}
+
+.card__emoji {
+  grid-area: emoji;
+}
+
+.card__image--button {
+  background-color: white;
+  /* border: 0;  */
 }
