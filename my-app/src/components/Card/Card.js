@@ -1,55 +1,29 @@
 import "./Card.css";
-import { useState } from "react";
+import Emojibar from "../Emojibar/Emojibar";
 
 function Card(props) {
-  const [emoji, setemoji] = useState("");
-
-  const handleEmojiClick = (emoji) => setemoji(emoji);
-
   return (
     <section className="card__container">
-      <h1 className="card__name">
-        {emoji}
+      <h2 className="card__headline">
+        {props.emoji}
         {props.characterName}
-      </h1>
+      </h2>
       <img className="card__image" src={props.image} alt={props.image}></img>
-      <p className="card__status">{props.status}</p>
-      <ul>
-        <button
-          onClick={() => handleEmojiClick("🧑‍🔬")}
-          className="card__image--button"
-        >
-          <li className="card__emoji">🧑‍🔬</li>
-        </button>
-        <button
-          onClick={() => handleEmojiClick("💥")}
-          className="card__image--button"
-        >
-          <li className="card__emoji">💥</li>
-        </button>
-        <button
-          onClick={() => handleEmojiClick("🥒")}
-          className="card__image--button"
-        >
-          <li className="card__emoji">🥒</li>
-        </button>
-        <button
-          onClick={() => handleEmojiClick("👽")}
-          className="card__image--button"
-        >
-          <li className="card__emoji">👽</li>
-        </button>
-      </ul>
+      <p className="card__status">Status: {props.status}</p>
+      <Emojibar
+        emojiState={props.emojiState}
+        handleEmojiButtonClick={props.handleEmojiButtonClick}
+        characterName={props.characterName}
+      />
+      {/* <section className="card-box">
+        <div className="flip-card-container">
+          <div className="flip-cart">
+            <div className="flip-cart-front">Front</div>
+            <div className="flip-cart-back">Back</div>
+          </div>
+        </div>
+      </section> */}
     </section>
-
-    // <section className="card-box">
-    //   <div className="flip-card-container">
-    //     <div className="flip-cart">
-    //       <div className="flip-cart-front">Front</div>
-    //       <div className="flip-cart-back">Back</div>
-    //     </div>
-    //   </div>
-    // </section>
   );
 }
 

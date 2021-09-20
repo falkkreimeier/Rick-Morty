@@ -3,14 +3,30 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: azure;
-  border: 2px black solid;
+  border: 2px white solid;
   border-radius: 20px;
   width: 400px;
   margin: 10px auto;
   padding: 10px;
+  background-color: rgb(5, 150, 135);
 }
 
 .footer__button {
+  background-color: transparent;
+  border: 0;
+  width: 120px;
+  height: 80px;
+  border: 0;
+  color: white;
+  background-color: none;
+  /* background-image: url(../image/Rick-and-morty.jpg); */
+  background-size: 94%;
+}
+
+.footer__button:hover {
+}
+
+.footer__button--active {
   background-color: transparent;
   border: 0;
   width: 120px;
