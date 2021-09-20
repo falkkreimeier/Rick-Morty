@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 import { useState } from "react";
 import { getEmoji } from "../helper";
+import Create from "../Create/Create";
 
 function App({ data }) {
   const [emojiData, setEmojiData] = useState(() => {
@@ -42,6 +43,15 @@ function App({ data }) {
   });
   const shownData = activeButton === "All" ? data : filteredData;
 
+  const INITIAL_DATA = [
+    {
+      name: "Rick Sanches",
+      Spezies: "Human;",
+    },
+  ];
+
+  const [newCharacterData, setNewCharacter] = useState(INITIAL_DATA);
+
   return (
     <div>
       <Header />
@@ -56,12 +66,18 @@ function App({ data }) {
           emoji={getEmoji(character.name, emojiData)}
         />
       ))}
+      <Create newCharacterButton={handleNewCharacterButton} />
+
       <Footer
         activeButton={activeButton}
         handleButtonClick={handleSpeciesButtonClick}
       />
     </div>
   );
+  function handleNewCharacterButton(name, species) {
+    const newData = [...newCharacterData, { name: name, house: species }];
+    setNewCharacter(newData);
+  }
 }
 
 export default App;

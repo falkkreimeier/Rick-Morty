@@ -1,0 +1,30 @@
+.create__container {
+  background-color: rgb(5, 150, 135);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px white solid;
+  border-radius: 20px;
+  width: 400px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.create__button {
+  width: 60px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.create__button:hover {
+  box-shadow: 0 0 5px 5px white;
+}
+
+.create__input {
+  width: 150px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
