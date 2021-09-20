@@ -3,13 +3,20 @@
   src: url("../Font/get_schwifty.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: AMISH;
+  src: url("../Font/AmishCyborg-Regular.otf") format("openType");
+}
+
 h1 {
-  margin: 5px;
+  padding: 5px;
+  margin: 10px;
   font-family: Regular;
 }
 
 p {
-  margin: 5px;
+  font-family: AMISH;
+  padding: 5px;
 }
 
 .Header__styling {
@@ -17,8 +24,11 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px black solid;
+  border: 2px white solid;
   border-radius: 20px;
   width: 400px;
   margin: 10px auto;
+}
+
+.header__image {
 }
