@@ -1,31 +1,18 @@
-import "./Create.css";
+import styled, { css } from "styled-components";
 
 function Create({ newCharacterButton }) {
   return (
-    <form
-      className="create__container"
-      onSubmit={(event) => handleSubmit(event)}
-    >
+    <Form onSubmit={(event) => handleSubmit(event)}>
       <label>
         <p>Name of Character:</p>
-        <input
-          className="create__input"
-          type="text"
-          name="characterName"
-          required
-        ></input>
+        <Input type="text" name="characterName" required></Input>
       </label>
       <label>
         <p>Spezies:</p>
-        <input
-          className="create__input"
-          type="text"
-          name="spezies"
-          required
-        ></input>
+        <Input type="text" name="spezies" required></Input>
       </label>
-      <button className="create__button">create</button>
-    </form>
+      <Button primary>create</Button>
+    </Form>
   );
   function handleSubmit(event) {
     event.preventDefault();
@@ -39,5 +26,41 @@ function Create({ newCharacterButton }) {
     newCharacterButton({ name: characterName, spezies: spezies });
   }
 }
+
+export const Button = styled.button`
+  width: 60px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: black;
+      color: white;
+    `}
+  :hover {
+    box-shadow: 0 0 5px 5px white;
+  }
+`;
+
+const Input = styled.input`
+  width: 150px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+`;
+
+const Form = styled.form`
+  background-color: rgb(5, 150, 135);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px white solid;
+  border-radius: 20px;
+  width: 400px;
+  margin: 10px auto;
+  text-align: center;
+`;
 
 export default Create;

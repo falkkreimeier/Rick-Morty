@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import data from "../src/data.json";
+import GlobalStyle from "./components/Card/GlobalStyles";
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <App data={data} />
   </React.StrictMode>,
   document.getElementById("root")
