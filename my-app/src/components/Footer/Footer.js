@@ -1,5 +1,4 @@
 import "./Footer.css";
-import portal from "../image/Portal.gif";
 
 function Footer({ activeButton, handleButtonClick }) {
   return (
