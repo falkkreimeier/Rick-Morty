@@ -15,14 +15,14 @@ function Card(props) {
         handleEmojiButtonClick={props.handleEmojiButtonClick}
         characterName={props.characterName}
       />
-      <section className="card-box">
+      {/* <section className="card-box">
         <div className="flip-card-container">
           <div className="flip-cart">
             <div className="flip-cart-front">Front</div>
             <div className="flip-cart-back">Back</div>
           </div>
         </div>
-      </section>
+      </section> */}
     </section>
   );
 }

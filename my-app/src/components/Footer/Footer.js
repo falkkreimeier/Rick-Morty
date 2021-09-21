@@ -1,4 +1,5 @@
 import "./Footer.css";
+import portal from "../image/Portal.gif";
 
 function Footer({ activeButton, handleButtonClick }) {
   return (
@@ -9,7 +10,7 @@ function Footer({ activeButton, handleButtonClick }) {
         }`}
         onClick={() => handleButtonClick("Human")}
       >
-        Humans
+        <p className="footer__text">Humans</p>
       </button>
       <button
         className={`footer__button ${
@@ -17,7 +18,7 @@ function Footer({ activeButton, handleButtonClick }) {
         }`}
         onClick={() => handleButtonClick("Alien")}
       >
-        Aliens
+        <p className="footer__text">Aliens</p>
       </button>
       <button className="footer__button"></button>
       <button className="footer__button"></button>

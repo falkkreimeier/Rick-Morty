@@ -1,3 +1,8 @@
+@font-face {
+  font-family: AMISH;
+  src: url("../Font/AmishCyborg-Regular.otf") format("openType");
+}
+
 .footer__container {
   display: flex;
   flex-direction: row;
@@ -12,6 +17,7 @@
 }
 
 .footer__button {
+  position: relative;
   background-color: transparent;
   border: 0;
   width: 120px;
@@ -23,9 +29,6 @@
   background-size: 94%;
 }
 
-.footer__button:hover {
-}
-
 .footer__button--active {
   background-color: transparent;
   border: 0;
@@ -35,5 +38,18 @@
   color: white;
   background-color: none;
   background-image: url(../image/Portal.gif);
-  background-size: 94%;
+  background-size: 96%;
+  background-position: center;
+  transition: 1s;
+  transform: scaleZ(1, 100);
+}
+
+.footer__text {
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.footer__gif {
+  position: sticky;
+  height: 5rem;
 }

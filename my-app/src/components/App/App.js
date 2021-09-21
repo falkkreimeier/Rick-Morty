@@ -66,8 +66,12 @@ function App({ data }) {
           emoji={getEmoji(character.name, emojiData)}
         />
       ))}
-      <Create newCharacterButton={handleNewCharacterButton} />
-
+      {newCharacterData.map((newCharacter) => (
+        <Create
+          newCharacterButton={handleNewCharacterButton}
+          key={newCharacter.name}
+        />
+      ))}
       <Footer
         activeButton={activeButton}
         handleButtonClick={handleSpeciesButtonClick}
