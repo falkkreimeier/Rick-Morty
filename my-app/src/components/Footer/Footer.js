@@ -9,19 +9,33 @@ function Footer({ activeButton, handleButtonClick }) {
         isActive={activeButton === "Human"}
         onClick={() => handleButtonClick("Human")}
       >
-        <p className="footer__text">Humans</p>
+        <FooterText>Humans</FooterText>
       </FooterButton>
       <FooterButton
         isActive={activeButton === "Alien"}
         onClick={() => handleButtonClick("Alien")}
       >
-        <p className="footer__text">Aliens</p>
+        <FooterText>Aliens</FooterText>
       </FooterButton>
-      <FooterButton></FooterButton>
-      <FooterButton></FooterButton>
+      <FooterButton
+        isActive={activeButton === "Alive"}
+        onClick={() => handleButtonClick("Alive")}
+      >
+        <FooterText>Alive</FooterText>
+      </FooterButton>
+
+      <FooterButton
+        isActive={activeButton === "Dead"}
+        onClick={() => handleButtonClick("Dead")}
+      >
+        <FooterText>Dead</FooterText>
+      </FooterButton>
     </FooterContainer>
   );
 }
+const FooterText = styled.p`
+  font-family: AMISH;
+`;
 
 const FooterContainer = styled.div`
   display: flex;
