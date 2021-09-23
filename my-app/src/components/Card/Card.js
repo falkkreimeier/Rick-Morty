@@ -1,6 +1,5 @@
 import Emojibar from "../Emojibar/Emojibar";
 import styled, { css } from "styled-components";
-import { Button } from "../Create/Create";
 import { useState } from "react";
 
 function Card(props) {
@@ -17,27 +16,41 @@ function Card(props) {
   return (
     <StyledFlipCard showDetails={showDetails}>
       <StyledFlipCardFront>
-        <h2 className="card__headline">
+        <ProfileNameFront>
           {props.emoji}
           {props.characterName}
-        </h2>
-        <img className="card__image" src={props.image} alt={props.image}></img>
-        <p className="card__status">Status: {props.status}</p>
+        </ProfileNameFront>
+        <ProfilImageFront
+          src={props.image}
+          alt={props.image}
+        ></ProfilImageFront>
+        <Details>Status: {props.status}</Details>
         <Emojibar
           emojiState={props.emojiState}
           handleEmojiButtonClick={props.handleEmojiButtonClick}
           characterName={props.characterName}
         />
-        <Button primary onClick={() => handelShowDetailsButtonClick()}>
-          Karte drehen
-        </Button>
+        <CardSpinButtonFront
+          primary
+          onClick={() => handelShowDetailsButtonClick()}
+        >
+          Details
+        </CardSpinButtonFront>
       </StyledFlipCardFront>
 
       <StyledFlipCardBack>
-        <p>Das müsste ich jetzt sehen können.</p>
-        <Button primary onClick={() => handelShowDetailsButtonClick()}>
+        <ProfileNameBack>
+          {props.emoji}
+          {props.characterName}
+        </ProfileNameBack>
+        <ProfilImageBack src={props.image} alt={props.image}></ProfilImageBack>
+        <Details>Status: {props.status}</Details>
+        <CardSpinButtonBack
+          primary
+          onClick={() => handelShowDetailsButtonClick()}
+        >
           Zurück
-        </Button>
+        </CardSpinButtonBack>
       </StyledFlipCardBack>
     </StyledFlipCard>
   );
@@ -45,7 +58,7 @@ function Card(props) {
 
 const StyledFlipCard = styled.section`
   width: 400px;
-  height: 300px;
+  height: 320px;
   perspective: 1000px;
   border-radius: 20px;
   margin: 10px auto;
@@ -54,9 +67,7 @@ const StyledFlipCard = styled.section`
   border-radius: 20px;
   transition: transform 1s;
   transform-style: preserve-3d;
-  /* cursor: pointer; */
   position: relative;
-  /* background-color: rgb(5, 150, 135); */
 
   ${({ showDetails }) =>
     showDetails &&
@@ -81,9 +92,12 @@ const StyledFlipCardFront = styled.div`
 `;
 
 const StyledFlipCardBack = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr;
+  grid-template-areas:
+    "profilename details"
+    "profileimage button";
   align-items: center;
   position: absolute;
   width: 100%;
@@ -94,6 +108,75 @@ const StyledFlipCardBack = styled.div`
   transform: rotateY(180deg);
   background-color: rgb(5, 150, 135);
   border-radius: 20px;
+`;
+
+const CardSpinButtonFront = styled.button`
+  grid-area: button;
+  width: 60px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: black;
+      color: white;
+    `}
+  &:hover {
+    box-shadow: 0 0 5px 5px white;
+  }
+`;
+
+const CardSpinButtonBack = styled.button`
+  grid-area: button;
+  width: 60px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: black;
+      color: white;
+    `}
+  &:hover {
+    box-shadow: 0 0 5px 5px white;
+  }
+`;
+
+const ProfileNameFront = styled.h2`
+  margin: 5px;
+  padding: 5px;
+  font-family: AMISH;
+`;
+
+const ProfileNameBack = styled.h2`
+  margin: 5px;
+  padding: 5px;
+  grid-area: profilename;
+  font-family: AMISH;
+`;
+const ProfilImageFront = styled.img`
+  margin: 5px;
+
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 8rem;
+  box-shadow: 0 0 5px 5px gray;
+`;
+
+const ProfilImageBack = styled.img`
+  margin: 5px;
+  grid-area: profileimage;
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 8rem;
+  box-shadow: 0 0 5px 5px gray;
+`;
+
+const Details = styled.p`
+  grid-area: details;
+  font-family: AMISH;
 `;
 
 export default Card;

@@ -27,7 +27,7 @@ function Create({ newCharacterButton }) {
   }
 }
 
-export const Button = styled.button`
+const Button = styled.button`
   width: 60px;
   margin: 10px;
   background-color: white;
