@@ -48,13 +48,28 @@ function App() {
   }
 
   const [activeButton, setspecies] = useState("All");
-  function handleSpeciesButtonClick(species) {
-    setspecies(species);
+  function handleSpeciesButtonClick(spezies, status) {
+    setspecies(spezies, status);
   }
 
+  // const filteredData = data.filter((character) => {
+  //   return character.species === activeButton;
+  // });
+
   const filteredData = data.filter((character) => {
-    return character.species === activeButton;
+    if (activeButton === "Human") {
+      return character.species === activeButton;
+    } else if (activeButton === "Alien") {
+      return character.species === activeButton;
+    } else if (activeButton === "Alive") {
+      return character.status === activeButton;
+    } else if (activeButton === "Dead") {
+      return character.status === activeButton;
+    } else {
+      return "";
+    }
   });
+
   const shownData = activeButton === "All" ? data : filteredData;
 
   const INITIAL_DATA = [
@@ -63,6 +78,15 @@ function App() {
       Spezies: "Human;",
     },
   ];
+
+  // const [activeButtonStatus, setActiveButtonStatus] = useState("all");
+  // function handleActiveButtonStatusClick(status) {
+  //   setActiveButtonStatus(status);
+  // }
+
+  // const filteredDataStatus = data.filter((character) => {
+  //   return character.status === activeButtonStatus;
+  // });
 
   const [newCharacterData, setNewCharacter] = useState(INITIAL_DATA);
 
