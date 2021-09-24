@@ -44,7 +44,15 @@ function Card(props) {
           {props.characterName}
         </ProfileNameBack>
         <ProfilImageBack src={props.image} alt={props.image}></ProfilImageBack>
-        <Details>Status: {props.status}</Details>
+        <Details>
+          <ul>
+            <li> {props.status}</li>
+            <li> {props.spezies}</li>
+            <li> {props.type}</li>
+            <li> {props.gender}</li>
+            <li> {props.origin}</li>
+          </ul>
+        </Details>
         <CardSpinButtonBack
           primary
           onClick={() => handelShowDetailsButtonClick()}

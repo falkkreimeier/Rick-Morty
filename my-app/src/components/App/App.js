@@ -2,7 +2,6 @@ import Header from "../Header/Header";
 import Card from "../Card/Card";
 import Footer from "../Footer/Footer";
 import Create from "../Create/Create";
-import "./App.css";
 import { useEffect, useState } from "react";
 import { getEmoji } from "../helper";
 import { Link, Route, Switch } from "react-router-dom";
@@ -10,7 +9,6 @@ import styled from "styled-components";
 
 function App() {
   const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
@@ -52,10 +50,6 @@ function App() {
     setspecies(spezies, status);
   }
 
-  // const filteredData = data.filter((character) => {
-  //   return character.species === activeButton;
-  // });
-
   const filteredData = data.filter((character) => {
     if (activeButton === "Human") {
       return character.species === activeButton;
@@ -79,21 +73,11 @@ function App() {
     },
   ];
 
-  // const [activeButtonStatus, setActiveButtonStatus] = useState("all");
-  // function handleActiveButtonStatusClick(status) {
-  //   setActiveButtonStatus(status);
-  // }
-
-  // const filteredDataStatus = data.filter((character) => {
-  //   return character.status === activeButtonStatus;
-  // });
-
   const [newCharacterData, setNewCharacter] = useState(INITIAL_DATA);
 
   return (
     <>
       <Header />
-
       <Route exact path={["/", "/character"]}>
         <StyledLink to="/create">Create</StyledLink>
         {shownData.map((character) => (
@@ -101,6 +85,8 @@ function App() {
             characterName={character.name}
             status={character.status}
             episode={character.episode}
+            type={character.type}
+            gender={character.gender}
             image={character.image}
             key={character.name}
             handleEmojiButtonClick={handleEmojiButtonClick}

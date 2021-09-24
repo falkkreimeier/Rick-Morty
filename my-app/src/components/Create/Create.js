@@ -3,14 +3,14 @@ import styled, { css } from "styled-components";
 function Create({ newCharacterButton }) {
   return (
     <Form onSubmit={(event) => handleSubmit(event)}>
-      <label>
+      <CreateLable>
         <p>Name of Character:</p>
         <Input type="text" name="characterName" required></Input>
-      </label>
-      <label>
+      </CreateLable>
+      <CreateLable>
         <p>Spezies:</p>
         <Input type="text" name="spezies" required></Input>
-      </label>
+      </CreateLable>
       <Button primary>create</Button>
     </Form>
   );
@@ -41,6 +41,10 @@ const Button = styled.button`
   :hover {
     box-shadow: 0 0 5px 5px white;
   }
+`;
+
+const CreateLable = styled.label`
+  font-family: AMISH;
 `;
 
 const Input = styled.input`

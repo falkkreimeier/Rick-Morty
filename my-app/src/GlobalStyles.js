@@ -1,11 +1,26 @@
 import { createGlobalStyle } from "styled-components";
-import Background from "../image/Rick-and-morty.jpg";
+import Background from "../../my-app/src/components/image/Rick-and-morty.jpg";
+import Amish from "./Font/AmishCyborg-Regular.otf";
+import Cyborg from "./Font/get_schwifty.ttf";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle` 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+ 
+
+}
+
+@font-face {
+  font-family: "AMISH";
+  src: url(${Amish}) format("openType");
+  }
+
+@font-face {
+  font-family: "Regular";
+  src: url(${Cyborg}) format("truetype");
 }
 
 body {
@@ -25,10 +40,6 @@ code {
     monospace;
 }
 
-@font-face {
-  font-family: AMISH;
-  src: url("../Font/AmishCyborg-Regular.otf") format("openType");
-}
 
 .card__headline {
   margin: 10px;

@@ -1,4 +1,3 @@
-import "./Footer.css";
 import styled, { css } from "styled-components";
 import Portal from "../image/Portal.gif";
 

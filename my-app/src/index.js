@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
-import GlobalStyle from "./components/Card/GlobalStyles";
+import GlobalStyle from "./GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
     <Router>
+      <GlobalStyle />
       <App />
     </Router>
   </React.StrictMode>,
